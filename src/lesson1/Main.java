@@ -5,13 +5,13 @@ public class Main {
     public static void main(String[] args) {
 //      printHelloWorld();
 
-        lessonOneExTwo();
-        lessonOneExThree(4.0, 5.0, 6.0,7.0);
-        lessonOneExFour(5, 15);
-        lessonOneExFive(-13);
-        lessonOneExSix(-18);
-        lessonOneExSeven("Александр");
-        lessonOneExEight(1974);
+//        lessonOneTwo();
+//        lessonOneThree(4.0, 5.0, 6.0,7.0);
+//        lessonOneFour(5, 15);
+        lessonOneFive(-13);
+//        lessonOneSix(-18);
+//        lessonOneSeven("Александр");
+//        lessonOneEight(400);
 
 
     }
@@ -20,7 +20,7 @@ public class Main {
         System.out.println("Hello, world!");
     }
 
-    public static void lessonOneExTwo() {
+    public static void lessonOneTwo() {
         byte valByte = 3;
         short valShort = 12345;
         int valInt = 7;
@@ -39,30 +39,42 @@ public class Main {
 //        System.out.println(valBoolean);
     }
 
-    public static void lessonOneExThree(double a, double b, double c, double d) {
-//        double a = 4.0;
-//        double b = 5.0;
-//        double c = 6.0;
-//        double d = 7.0;
+    public static void lessonOneThree(double a, double b, double c, double d) {
+/*        if (d == 0){
+            System.out.println("На ноль делить нельзя!");
+            return 0;
+        }
+        return a * (b + (c / d));*/ // вариант преподователя
         double result = a * (b + (c / d));
         System.out.println(result);
     }
 
-    public static boolean lessonOneExFour(int firstNumber, int twoNumber) {
+    public static boolean lessonOneFour(int firstNumber, int twoNumber) {
         int result = firstNumber + twoNumber;
-        if (result >= 10 && result <= 20){
+        if (result >= 10 && result <= 20) {
 //            System.out.println("true");
             return true;
         }
         return false;
     }
 
-    public static void lessonOneExFive(int number) {
-        if (number >= 0) System.out.println(number + " - число положительное.");
-        else System.out.println(number + " - число отрицательное.");
+    public static void lessonOneFive(int number) {
+        // решение с помощью тернарного оператора
+
+        String word = (number >= 0) ? "положительное." : "отрицательное.";
+        System.out.println(number + " - число " + word);
+//        System.out.printf("%d - число %s%n", number, word); //форматированный вывод
+
+//        решение с if
+/*        if (number >= 0) {
+            System.out.println(number + " - число положительное.");
+        }
+        System.out.println(number + " - число отрицательное.");*/
+
     }
 
-    public static boolean lessonOneExSix(int number) {
+    public static boolean lessonOneSix(int number) {
+//        return number < 0; // самый короткий код
         if (number < 0) {
 //            System.out.println("true");
             return true;
@@ -70,18 +82,16 @@ public class Main {
         return false;
     }
 
-    static void lessonOneExSeven(String name) {
+    static void lessonOneSeven(String name) {
         System.out.println("Привет, " + name + "!");
     }
 
     static void lessonOneExEight(int year) {
-        if (year % 4 == 0 && year % 100 != 0 && year % 400 == 0){
+        if (year % 400 == 0 || (year % 4 == 0 && year % 100 != 0)) {
             System.out.println(year + " год високосный.");
-        }
-        System.out.println(year + " год не является високосным.");
+        } else System.out.println(year + " год не является високосным.");
 
     }
-
 
 
 }
