@@ -9,7 +9,7 @@ public class homeWork2 {
 //        lessonTwoThree();
 //        lessonTwoFour();
 //        lessonTwoFive();
-//        System.out.println(lessonTwoSix(new int[]{1, 1, 1, 2, 1}));
+        System.out.println(lessonTwoSix(new int[]{1, 1, 1, 2, 1}));
 //        lessonTwoSeven();
     }
 
