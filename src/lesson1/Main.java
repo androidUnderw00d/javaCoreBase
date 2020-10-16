@@ -8,8 +8,8 @@ public class Main {
 //        lessonOneTwo();
 //        lessonOneThree(4.0, 5.0, 6.0,7.0);
 //        lessonOneFour(5, 15);
-        lessonOneFive(-13);
-//        lessonOneSix(-18);
+//        lessonOneFive(-13);
+        lessonOneSix(-18);
 //        lessonOneSeven("Александр");
 //        lessonOneEight(400);
 
