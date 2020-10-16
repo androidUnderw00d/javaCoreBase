@@ -9,23 +9,31 @@ public class homeWork2 {
 //        lessonTwoThree();
 //        lessonTwoFour();
 //        lessonTwoFive();
-        System.out.println(lessonTwoSix(new int[]{1, 1, 1, 2, 1}));
+//        System.out.println(lessonTwoSix(new int[]{1, 1, 1, 2, 1}));
 //        lessonTwoSeven();
     }
 
     private static boolean lessonTwoSix(int arrSix[]) {
         int sum = 0;
         int sumLeft = 0;
+        boolean result = false; // переменная нужна если в матрице несколько точек равенства
         for (int i = 0; i < arrSix.length; i++) {
             sum = sum + arrSix[i];
         }
+
+        // Проверка суммы массива на четность
+        if (sum % 2 != 0) {
+            return false;
+        }
+
         for (int i = 0; i < arrSix.length; i++) {
             sumLeft = sumLeft + arrSix[i];
             if (sumLeft == sum - sumLeft) {
-                return true;
+                System.out.println(i);
+                result = true;
             }
         }
-        return false;
+        return result;
 //        System.out.println(Arrays.toString(arrSix));
 //        System.out.println("Сумма чисел массива " + sum);
     }
@@ -41,15 +49,29 @@ public class homeWork2 {
             } else if (arrFive[i] > maxArr) {
                 maxArr = arrFive[i];
             }
+
+            // Класс Math
+/*            minArr = Math.min(minArr, arrFive[i]);
+            maxArr = Math.max(maxArr, arrFive[i]);*/
+
         }
+
+        //Сортировка массива Класс Arrays
+
+/*        Arrays.sort(arrFive);
+        minArr = arrFive[0];
+        maxArr = arrFive[arrFive.length - 1];*/
+
         System.out.printf("Минимальный элеммент массива %d максимальный %d", minArr, maxArr);
     }
 
     private static void lessonTwoFour() {
 
-        final int SIZE = 5;
+        final int SIZE = 9;
 
         int[][] deepArrayFour = new int[SIZE][SIZE];
+        int lastIndex = SIZE - 1;
+
         for (int i = 0; i < SIZE; i++) {
             for (int j = 0; j < SIZE; j++) {
                 if (i == j || i + j == SIZE - 1) { //i + j == SIZE - 1 нахождени элемента обратной диагонали?
@@ -57,12 +79,23 @@ public class homeWork2 {
                 }
             }
         }
+
+        // Реализация с одним циклом
+
+/*        for (int i = 0; i < SIZE; i++) {
+            deepArrayFour [i][i] = deepArrayFour [i][lastIndex - i] = 1;
+        }*/
+
         for (int[] ints : deepArrayFour) {
+            System.out.println(Arrays.toString(ints));
+        }
+
+/*        for (int[] ints : deepArrayFour) {
             for (int anInt : ints) {
                 System.out.print(anInt + " ");
             }
             System.out.println();
-        }
+        }*/
     }
 
     private static void lessonTwoThree() {
@@ -76,6 +109,10 @@ public class homeWork2 {
             if (arrThree[i] < 6) {
                 arrThree[i] *= 2;
             }
+
+            // Тернарный оператор в таком случае 50/50
+
+//            arrThree[i] *= (arrThree[i] < 6) ? 2 : 1;
         }
         System.out.println(Arrays.toString(arrThree));
 
@@ -139,10 +176,14 @@ public class homeWork2 {
         System.out.println("Конечный массив");
 
         for (int i = 0; i < arr.length; i++) {
-            if (arr[i] == 0) {
+            /*if (arr[i] == 0) {
                 arr[i] = 1;
-            } else arr[i] = 0;
+            } else arr[i] = 0;*/
 //            System.out.print(arr[i] + " ");
+
+            // if else с помощью тернарного оператора
+
+            arr[i] = (arr[i] == 0) ? 1 : 0;
         }
 
         System.out.println(Arrays.toString(arr));
