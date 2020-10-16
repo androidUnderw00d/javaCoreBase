@@ -52,8 +52,8 @@ public class Main {
     public static boolean lessonOneFour(int firstNumber, int twoNumber) {
         int result = firstNumber + twoNumber;
         if (result >= 10 && result <= 20) {
-//            System.out.println("true");
-            return true;
+            System.out.println("true");
+//            return true;
         }
         return false;
     }
