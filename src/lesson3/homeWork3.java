@@ -7,7 +7,7 @@ public class homeWork3 {
 
     public static void main(String[] args) {
         System.out.println("Ваша задача угадать число.\n");
-        guessNumber(9);
+        guessNumber(10);
     }
 
     private static void reStart() {
@@ -15,7 +15,7 @@ public class homeWork3 {
         Scanner scanner = new Scanner(System.in);
         int number = scanner.nextInt();
         if (number == 1){
-            guessNumber(9);
+            guessNumber(10);
         }
     }
 
