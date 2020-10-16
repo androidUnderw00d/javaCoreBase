@@ -35,6 +35,5 @@ public class homeWork3 {
             }
         }
         reStart();
-
     }
 }
