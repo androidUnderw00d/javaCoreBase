@@ -147,7 +147,7 @@ public class TicTakToe {
     }
 
     private static void turnAgain() {
-        String[] yesAnswer = new String[]{"yes", "1", "да", "конечно", "y"};
+        String[] yesAnswer = new String[]{"yes", "1", "да", "y"};
         System.out.println("\nХотите сыграть еще раз. Да, Нет");
         String userAnswer = scanner.next();
         userAnswer = userAnswer.toLowerCase();
