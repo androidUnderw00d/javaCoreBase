@@ -5,7 +5,8 @@ import java.util.Scanner;
 
 public class TicTakToe {
 
-    static final int SIZE = 3;
+    static final int SIZE = 5;
+    static final int WIN_SIZE = 5;
     static final int DOT_SIZE_TO_WIN = 3;
 
     static final char DOT_EMPTY = '•';
@@ -161,11 +162,11 @@ public class TicTakToe {
     private static boolean checkWin(char symbol) {
         if (checkRow(symbol)) return true;
         if (checkCol(symbol)) return true;
-//        if (chekDiagonal(rowNumber, colNumber, symbol)) return true;
+//        if (chekDiagonal(symbol)) return true;
         //checkInvertDiagonal
 
-        if (map[0][0] == symbol && map[1][1] == symbol && map[2][2] == symbol) return true;
-        if (map[0][2] == symbol && map[1][1] == symbol && map[2][0] == symbol) return true;
+        if (map[0][0] == symbol && map[1][1] == symbol && map[2][2] == symbol && map[3][3] == symbol && map[4][4] == symbol) return true;
+        if (map[0][4] == symbol && map[1][3] == symbol && map[2][2] == symbol && map[3][1] == symbol && map[4][0] ==symbol) return true;
 
         return false;
     }
@@ -178,7 +179,7 @@ public class TicTakToe {
                 if (map[i][j] == symbol) {
                     winCharsCount += 1;
                 }
-                if (winCharsCount == SIZE) {
+                if (winCharsCount == WIN_SIZE) {
                     return true;
                 }
             }
@@ -193,7 +194,7 @@ public class TicTakToe {
                 if (map[j][i] == symbol) {
                     winCharsCount += 1;
                 }
-                if (winCharsCount == SIZE) {
+                if (winCharsCount == WIN_SIZE) {
                     return true;
                 }
             }
@@ -202,15 +203,15 @@ public class TicTakToe {
     }
 
     private static boolean chekDiagonal(int rowNumber, int colNumber, char symbol) {
-        int winCharsCount = 0;
         for (int i = 0; i < SIZE; i++) {
+        int winCharsCount = 0;
             if (map[i][i] == symbol) {
-                winCharsCount += 1;
+                    winCharsCount += 1;
+                    if (winCharsCount == WIN_SIZE) {
+                        return true;
+                    }
+                }
             }
-        }
-        if (winCharsCount == SIZE) {
-            return true;
-        }
         return false;
     }
 
