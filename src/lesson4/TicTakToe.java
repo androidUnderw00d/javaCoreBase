@@ -178,9 +178,9 @@ public class TicTakToe {
                 if (map[i][j] == symbol) {
                     winCharsCount += 1;
                 }
-            if (winCharsCount == SIZE) {
-                return true;
-            }
+                if (winCharsCount == SIZE) {
+                    return true;
+                }
             }
         }
         return false;
@@ -193,9 +193,9 @@ public class TicTakToe {
                 if (map[j][i] == symbol) {
                     winCharsCount += 1;
                 }
-            if (winCharsCount == SIZE) {
-                return true;
-            }
+                if (winCharsCount == SIZE) {
+                    return true;
+                }
             }
         }
         return false;
