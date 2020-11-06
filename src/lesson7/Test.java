@@ -14,5 +14,6 @@ public class Test {
         cat.eat(plate);
         plate.printInfo();
         cat.catInfo();
+
     }
 }

@@ -18,7 +18,7 @@ public class Cat {
 
     public void creatingCats(int QUANTITY) {
         Cat[] catsArray = new Cat[QUANTITY];
-        String[] nameArray = {"Барсик", "Матроскин", "Борис Николаевич", "Компот"};
+        String[] nameArray = {"Барсик", "Матроскин", "Гарфилд", "Компот"};
         Random random = new Random();
         for (int i = 0; i < QUANTITY; i++) {
             catsArray[i] = new Cat(nameArray[i], random.nextInt(4));

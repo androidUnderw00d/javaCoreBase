@@ -28,6 +28,7 @@ public class Plate {
     }
 
     public void printInfo() {
+
         System.out.println(this);
     }
 
